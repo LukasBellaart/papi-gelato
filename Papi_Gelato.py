@@ -1,4 +1,4 @@
-print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is")
+print("Welkom bij Papi Gelato")
 def stap1():
     bolletjes = int(input('Hoeveel bolletjes wilt u? -> '))
     if bolletjes >= 1 and bolletjes <= 3:
