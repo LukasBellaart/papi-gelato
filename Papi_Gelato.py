@@ -24,6 +24,15 @@ def stap2(bolletjes):
         stap2(bolletjes)
 
 def stap3(bolletjes, hoorntjeOfBakje):
+    for i in range(1,bolletjes+1):
+        smaak = input('Welke smaak wilt u voor bolletje nummer '+str(i)+'? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? -> ').lower()
+        if smaak == 'a' or smaak == 'c' or smaak == "m" or smaak == 'v':
+            # do nothing
+            print('')
+        else:
+            print("Sorry, dat snap ik niet...")
+            stap3(bolletjes, hoorntjeOfBakje)
+
     antwoord = input("Hier is uw "+hoorntjeOfBakje+" met "+str(bolletjes)+" bolletje(s). Wilt u nog meer bestellen? (Y/N) -> ")
     if antwoord == 'y':
         stap1()
