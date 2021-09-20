@@ -1,10 +1,23 @@
 print("Welkom bij Papi Gelato")
+
+gekochtArray = []
+prijsArray = { #Prijzen van de pizzas in een dictionary
+    "bolletje": 1.10,
+    "hoorntje": 1.25,
+    "bakje": 0.75
+}
 def stap1():
     bolletjes = int(input('Hoeveel bolletjes wilt u? -> '))
     if bolletjes >= 1 and bolletjes <= 3:
+        for x in range(0, bolletjes):
+            gekochtArray.append("bolletje") 
+        gekochtArray.append("hoorntje")
         stap2(bolletjes)
     elif bolletjes >=4 and bolletjes <= 8:
         print('Dan krijgt u van mij een bakje met '+ str(bolletjes)+' bolletjes')
+        for x in range(0, bolletjes): 
+            gekochtArray.append("bolletje")
+        gekochtArray.append('bakje')
         stap3(bolletjes, "bakje")
     elif bolletjes > 8:
         print('Sorry, zulke grote bakken hebben we niet')
@@ -37,7 +50,26 @@ def stap3(bolletjes, hoorntjeOfBakje):
     if antwoord == 'y':
         stap1()
     elif antwoord == 'n':
-        print('Bedankt en tot ziens!')
+        bolletjeCount = 0
+        hoorntjesCount = 0
+        bakjesCount = 0
+        for x in gekochtArray: 
+            if x == "bolletje":
+                bolletjeCount += 1
+            elif x == "hoorntje":
+                hoorntjesCount += 1
+            elif x == "bakje":
+                bakjesCount += 1
+
+        print(" ----------------------------------------------------")
+        print("Bolletjes       "+str(bolletjeCount)+" x €"+str(prijsArray["bolletje"])+"     = €"+str(bolletjeCount * prijsArray["bolletje"]))
+        if hoorntjesCount > 0:
+            print("Horrentje       "+str(hoorntjesCount)+" x €"+str(prijsArray["hoorntje"])+"    = €"+str(hoorntjesCount * prijsArray["hoorntje"]))
+        if bakjesCount > 0:
+            print("Bakje           "+str(bakjesCount)+" x €"+str(prijsArray["bakje"])+"     = €"+str(bakjesCount * prijsArray["bakje"]))      
+        print("                             -------- +")   
+        print("Totaal                       = €"+str(bolletjeCount * prijsArray["bolletje"] + hoorntjesCount * prijsArray["hoorntje"] + bakjesCount * prijsArray["bakje"]))   
+
     else:
         print("Sorry, dat snap ik niet...")
         stap3(bolletjes, hoorntjeOfBakje)
