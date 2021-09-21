@@ -157,15 +157,15 @@ def stap4(bolletjes, hoorntjeOfBakje):
                 caramelHoorntje += 1
 
         print(" ----------------------------------------------------")
-        print("Bolletjes       "+str(bolletjeCount)+" x €"+str(prijsArray["bolletje"])+"     = €"+str(bolletjeCount * prijsArray["bolletje"]))
+        print("Bolletjes       "+str(bolletjeCount)+" x €"+str(prijsArray["bolletje"])+"     = €"+str(round(bolletjeCount * prijsArray["bolletje"],2)))
         if hoorntjesCount > 0:
-            print("Horrentje       "+str(hoorntjesCount)+" x €"+str(prijsArray["hoorntje"])+"    = €"+str(hoorntjesCount * prijsArray["hoorntje"]))
+            print("Horrentje       "+str(hoorntjesCount)+" x €"+str(prijsArray["hoorntje"])+"    = €"+str(round(hoorntjesCount * prijsArray["hoorntje"],2)))
         if bakjesCount > 0:
-            print("Bakje           "+str(bakjesCount)+" x €"+str(prijsArray["bakje"])+"     = €"+str(bakjesCount * prijsArray["bakje"]))  
+            print("Bakje           "+str(bakjesCount)+" x €"+str(prijsArray["bakje"])+"     = €"+str(round(bakjesCount * prijsArray["bakje"],2)))  
         if slagroom + sprinkels + caramelBakje + caramelHoorntje > 0:
-            print("Toppings        "+str(slagroom + sprinkels + caramelBakje + caramelHoorntje)+"             = €"+str(slagroom * prijsArray["slagroom"] + sprinkels * prijsArray["sprinkels"] + caramelBakje * prijsArray["caramelBakje"] + caramelHoorntje * prijsArray["caramelHoorntje"]))
+            print("Toppings        "+str(slagroom + sprinkels + caramelBakje + caramelHoorntje)+"             = €"+str(round(slagroom * prijsArray["slagroom"] + sprinkels * prijsArray["sprinkels"] + caramelBakje * prijsArray["caramelBakje"] + caramelHoorntje * prijsArray["caramelHoorntje"],2)))
         print("                             -------- +")   
-        print("Totaal                       = €"+str(bolletjeCount * prijsArray["bolletje"] + hoorntjesCount * prijsArray["hoorntje"] + bakjesCount * prijsArray["bakje"] + slagroom * prijsArray["slagroom"] + sprinkels * prijsArray["sprinkels"] + caramelBakje * prijsArray["caramelBakje"] + caramelHoorntje * prijsArray["caramelHoorntje"]))   
+        print("Totaal                       = €"+str(round(bolletjeCount * prijsArray["bolletje"] + hoorntjesCount * prijsArray["hoorntje"] + bakjesCount * prijsArray["bakje"] + slagroom * prijsArray["slagroom"] + sprinkels * prijsArray["sprinkels"] + caramelBakje * prijsArray["caramelBakje"] + caramelHoorntje * prijsArray["caramelHoorntje"],2)))   
 
     else:
         print("Sorry, dat snap ik niet...")
