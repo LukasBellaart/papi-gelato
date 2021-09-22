@@ -2,7 +2,7 @@ print("Welkom bij Papi Gelato")
 
 gekochtArray = []
 prijsArray = { #Prijzen van de pizzas in een dictionary
-    "bolletje": 1.10,
+    "bolletje": 0.95,
     "hoorntje": 1.25,
     "bakje": 0.75,
     'slagroom': 0.50,
@@ -12,7 +12,7 @@ prijsArray = { #Prijzen van de pizzas in een dictionary
     'liter':9.80
 }
 
-BTW = 9
+BTW = 6
 
 def particulierOfZakelijk():
     while True:
@@ -44,7 +44,7 @@ def stap2Zakelijk(liters):
             # do nothing
             print('')
         else:
-            print("Sorry, dat snap ik niet...")
+            print("Sorry dat is geen optie die we aanbieden....")
             stap2Zakelijk(liters)
     
     liter = 0
@@ -93,7 +93,7 @@ def stap2(bolletjes):
     elif antwoord == 'b':
         stap3(bolletjes, "bakje")
     else:
-        print("Sorry, dat snap ik niet...")
+        print("Sorry dat is geen optie die we aanbieden....")
         stap2(bolletjes)
 
 def stap3(bolletjes, hoorntjeOfBakje):
@@ -116,17 +116,17 @@ def stap3(bolletjes, hoorntjeOfBakje):
 
         stap4(bolletjes, hoorntjeOfBakje)
     else:
-        print("Sorry, dat snap ik niet...")
+        print("Sorry dat is geen optie die we aanbieden....")
         stap3(bolletjes)
 
 def stap4(bolletjes, hoorntjeOfBakje):
     for i in range(1,bolletjes+1):
-        smaak = input('Welke smaak wilt u voor bolletje nummer '+str(i)+'? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? -> ').lower()
-        if smaak == 'a' or smaak == 'c' or smaak == "m" or smaak == 'v':
+        smaak = input('Welke smaak wilt u voor bolletje nummer '+str(i)+'? A) Aardbei, C) Chocolade of V) Vanille? -> ').lower()
+        if smaak == 'a' or smaak == 'c' or smaak == 'v':
             # do nothing
             print('')
         else:
-            print("Sorry, dat snap ik niet...")
+            print("Sorry dat is geen optie die we aanbieden....")
             stap4(bolletjes, hoorntjeOfBakje)
 
     antwoord = input("Hier is uw "+hoorntjeOfBakje+" met "+str(bolletjes)+" bolletje(s). Wilt u nog meer bestellen? (Y/N) -> ")
@@ -168,6 +168,6 @@ def stap4(bolletjes, hoorntjeOfBakje):
         print("Totaal                       = €"+str(round(bolletjeCount * prijsArray["bolletje"] + hoorntjesCount * prijsArray["hoorntje"] + bakjesCount * prijsArray["bakje"] + slagroom * prijsArray["slagroom"] + sprinkels * prijsArray["sprinkels"] + caramelBakje * prijsArray["caramelBakje"] + caramelHoorntje * prijsArray["caramelHoorntje"],2)))   
 
     else:
-        print("Sorry, dat snap ik niet...")
+        print("Sorry dat is geen optie die we aanbieden....")
         stap4(bolletjes, hoorntjeOfBakje)
 particulierOfZakelijk()
